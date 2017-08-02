@@ -466,7 +466,7 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor {
     }
 
     setVisibleMonth(): void {
-        var firstDate: IMyDate = {year: 0, month: 0, day: 0};;
+        let firstDate: IMyDate = {year: 0, month: 0, day: 0};
         if (this.opts.multiSelect) {
             if (this.selectedDates.length > 0) {
                 firstDate = this.selectedDates[0];
@@ -593,7 +593,7 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor {
       if (date.day !== 0 && date.month !== 0 && date.year !== 0) {
         let advancedDate = this.getDate(this.selectedDate.year, this.selectedDate.month, this.selectedDate.day);
         advancedDate.setDate(advancedDate.getDate() - 1);
-        date = {year: advancedDate.getFullYear(), month: advancedDate.getMonth() + 1, day: advancedDate.getDate()};;
+        date = {year: advancedDate.getFullYear(), month: advancedDate.getMonth() + 1, day: advancedDate.getDate()};
       } else {
         date = this.getToday();
       }
@@ -615,7 +615,7 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor {
         if (date.day !== 0 && date.month !== 0 && date.year !== 0) {
           let advancedDate = this.getDate(this.selectedDate.year, this.selectedDate.month, this.selectedDate.day);
           advancedDate.setDate(advancedDate.getDate() + 1);
-          date = {year: advancedDate.getFullYear(), month: advancedDate.getMonth() + 1, day: advancedDate.getDate()};;
+          date = {year: advancedDate.getFullYear(), month: advancedDate.getMonth() + 1, day: advancedDate.getDate()};
         } else {
           date = this.getToday();
         }
@@ -689,9 +689,9 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor {
                 this.selectedDates = newDates;
             }
 
-            if (this.selectedDates.length == 0) {
+            if (this.selectedDates.length === 0) {
                 this.selectionDayTxt = "";
-            } else if (this.selectedDates.length == 1) {
+            } else if (this.selectedDates.length === 1) {
                 this.selectionDayTxt = this.formatDate(this.selectedDates[0]);
             } else {
                 // TODO: localization?
