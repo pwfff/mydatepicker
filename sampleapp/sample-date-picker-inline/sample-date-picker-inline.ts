@@ -17,7 +17,8 @@ export class SampleDatePickerInline implements OnInit {
         disableDays: [{year: 0, month: 0, day: 0}],
         showWeekNumbers: true,
         selectorHeight: '232px',
-        selectorWidth: '252px'
+        selectorWidth: '252px',
+        allowDeselectDate: true
     };
     private selectedDateInline: Object = {};
 
@@ -117,6 +118,13 @@ export class SampleDatePickerInline implements OnInit {
         // Mark current day
         let copy = this.getCopyOfOptions();
         copy.markCurrentDay = checked;
+        this.myDatePickerInlineOptions = copy;
+    }
+
+    onMultiSelect(checked:boolean) {
+        // Mark current day
+        let copy = this.getCopyOfOptions();
+        copy.multiSelect = checked;
         this.myDatePickerInlineOptions = copy;
     }
 
